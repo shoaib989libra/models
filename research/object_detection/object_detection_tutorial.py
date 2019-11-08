@@ -116,7 +116,7 @@ def predict_video(video, path):
 						instance_masks=output_dict.get('detection_masks'),
 						use_normalized_coordinates=True,
 						line_thickness=8,
-						min_score_tresh=args.tresh)
+						min_score_thresh=args.thresh)
 
 					out.write(cv2.resize(image_np, (width, height)))
 				
@@ -223,7 +223,7 @@ def predict_livefeed():
 						instance_masks=output_dict.get('detection_masks'),
 						use_normalized_coordinates=True,
 						line_thickness=8,
-						min_score_tresh=args.tresh)
+						min_score_thresh=args.thresh)
 
 					cv2.imshow('Prediction', cv2.resize(image_np, (width, height)))
 					if cv2.waitKey(1) & 0xFF == ord('q'):
